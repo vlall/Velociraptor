@@ -21,7 +21,7 @@ do
   echo "s3_bucket_region=$s3_bucket_region" >> $jobfilename
   cat job-footer.sh >> $jobfilename
   # payload of urls is sent as the last line of the file.
-  echo \#`cat $file | gzip | base64 --wrap=0` >> $jobfilename
+  echo \#`cat $file | gzip | base64 --break=0` >> $jobfilename
 done
 
 # This directory is used by runjob.sh to capture status.
